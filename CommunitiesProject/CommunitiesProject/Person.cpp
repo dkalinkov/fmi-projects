@@ -2,7 +2,8 @@
 #include "Person.h"
 #include "string.h"
 #include <iostream>
-using namespace std;
+
+//TODO: EGN verification
 
 //CONSTRUCTORS
 Person::Person()
@@ -39,7 +40,23 @@ Person::Person(const Person& otherPerson)
 
 Person& Person::operator = (const Person& otherPerson)
 {
-	return * this;
+	Person newPerson = Person();
+	
+	newPerson.name = new char[strlen(otherPerson.name)];
+	strcpy(newPerson.name, otherPerson.name);
+
+	newPerson.EGN = new char[strlen(otherPerson.EGN)];
+	strcpy(newPerson.EGN, otherPerson.EGN);
+
+	newPerson.address = new char[strlen(otherPerson.address)];
+	strcpy(newPerson.address, otherPerson.address);
+
+	newPerson.age = otherPerson.age;
+	newPerson.sex = otherPerson.sex;
+	newPerson.job = otherPerson.job;
+	newPerson.income = otherPerson.income;
+
+	return newPerson;
 }
 
 Person::~Person(void)
@@ -151,4 +168,12 @@ void Person::SetIncome(double income)
 	{
 		this->income = income;
 	}
+}
+
+std::ostream& operator <<(std::ostream& output, const Person& person)
+{
+	output << person.GetName <<" "<< person.GetEGN <<" "<< person.GetAddress <<" "<< person.GetAge<<" "
+		<< person.GetSexType <<" "<< person.GetJob<<" "<< person.GetIncome << std::endl;
+
+	return output;
 }

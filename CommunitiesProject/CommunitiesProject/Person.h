@@ -4,7 +4,6 @@
 #include "ostream"
 #include "SexEnum.h"
 #include "ProfessionEnum.h"
-using namespace std;
 
 class Person
 {
@@ -47,6 +46,6 @@ public:
 	void SetIncome(double);
 };
 
-ostream& operator <<(ostream& output, const Person& person);
+std::ostream& operator <<(std::ostream& output, const Person& person);
 
 #endif
