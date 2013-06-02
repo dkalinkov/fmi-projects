@@ -16,7 +16,11 @@ Person::Person()
 Person::Person(const char* name, const char* egn, const char* address, ProfessionEnum job, double income)
 {
 	SetName(name);
-	SetEGN(egn);
+
+	ValidateEGN(egn);
+	this->EGN = new char[strlen(egn)];
+	strcpy(this->EGN, egn);
+
 	SetAddress(address);
 	this->age = CalculateAge();
 	this->sex = GetSexFromEGN();
@@ -136,6 +140,18 @@ char* Person::JobAsString() const
 	}
 }
 
+void Person::Information(std::ostream& output = std::cout) const
+{
+	output << "Name: "<< this->GetName() 
+		<<"\nEGN: "<< this->GetEGN() 
+		<<"\nAddress: "<< this->GetAddress() 
+		<<"\nAge: "<< this->GetAge() 
+		<<"\nSex: "<< (this->GetSexType() == 0 ? "Male" : "Female")
+		<<"\nJob: "<< this->JobAsString()
+		<<"\nIncome: "<< this->GetIncome() 
+		<< std::endl;
+}
+
 //Getter and setter for name
 char* Person::GetName() const
 {
@@ -153,17 +169,10 @@ void Person::SetName(const char* name)
 	strcpy(this->name, name);
 }
 
-//Getter and setter for EGN
+//Getter for EGN
 char* Person::GetEGN() const
 {
 	return this->EGN;
-}
-
-void Person::SetEGN(const char* egn)
-{
-	ValidateEGN(egn);
-	this->EGN = new char[strlen(egn)];
-	strcpy(this->EGN, egn);
 }
 
 //Getter and setter for address
@@ -226,14 +235,7 @@ void Person::SetIncome(double income)
 
 std::ostream& operator <<(std::ostream& output, const Person& person)
 {
-	output << "Name: "<< person.GetName() 
-		<<"\nEGN: "<< person.GetEGN() 
-		<<"\nAddress: "<< person.GetAddress() 
-		<<"\nAge: "<< person.GetAge() 
-		<<"\nSex: "<< (person.GetSexType() == 0 ? "Male" : "Female")
-		<<"\nJob: "<< person.JobAsString()
-		<<"\nIncome: "<< person.GetIncome() 
-		<< std::endl;
+	person.Information(output);
 
 	return output;
 }

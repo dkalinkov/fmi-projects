@@ -36,11 +36,12 @@ public:
 	double GetIncome() const;
 	char* JobAsString() const;
 
-	void SetName(const char*);	
-	void SetEGN(const char*);	
+	void SetName(const char*);		
 	void SetAddress(const char*);	
 	void SetJob(ProfessionEnum);	
 	void SetIncome(double);
+
+	void Information(std::ostream&) const;
 };
 
 std::ostream& operator <<(std::ostream& output, const Person& person);
