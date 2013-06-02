@@ -13,42 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Person">
-      <UniqueIdentifier>{2d95cbc0-b1c2-440c-a061-762af867877c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Community">
-      <UniqueIdentifier>{c0e86760-3b89-423d-9b9f-518384634c82}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Person.h">
-      <Filter>Person</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProfessionEnum.h">
-      <Filter>Person</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SexEnum.h">
-      <Filter>Person</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CommunitiesProject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Person.cpp">
-      <Filter>Person</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

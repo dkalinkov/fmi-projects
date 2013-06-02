@@ -1,7 +1,5 @@
-#ifndef PROFESSIONENUM
-#define PROFESSIONENUM
-
-#include "stdafx.h"
+#ifndef PROFESSION_ENUM
+#define PROFESSION_ENUM
 
 enum ProfessionEnum 
 {
