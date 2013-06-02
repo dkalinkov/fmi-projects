@@ -45,19 +45,26 @@ Person::Person(const Person& otherPerson)
 
 Person& Person::operator = (const Person& otherPerson)
 {
-	this->name = new char[strlen(otherPerson.name) + 1];
-	strcpy(this->name, otherPerson.name);
+	if (this != &otherPerson)
+	{
+		delete[] name;
+		delete[] EGN;
+		delete[] address;
 
-	this->EGN = new char[strlen(otherPerson.EGN) + 1];
-	strcpy(this->EGN, otherPerson.EGN);
+		this->name = new char[strlen(otherPerson.name) + 1];
+		strcpy(this->name, otherPerson.name);
 
-	this->address = new char[strlen(otherPerson.address) + 1];
-	strcpy(this->address, otherPerson.address);
+		this->EGN = new char[strlen(otherPerson.EGN) + 1];
+		strcpy(this->EGN, otherPerson.EGN);
 
-	this->age = otherPerson.age;
-	this->sex = otherPerson.sex;
-	this->job = otherPerson.job;
-	this->income = otherPerson.income;
+		this->address = new char[strlen(otherPerson.address) + 1];
+		strcpy(this->address, otherPerson.address);
+
+		this->age = otherPerson.age;
+		this->sex = otherPerson.sex;
+		this->job = otherPerson.job;
+		this->income = otherPerson.income;
+	}
 
 	return *this;
 }
