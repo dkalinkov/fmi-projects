@@ -6,8 +6,6 @@
 #include "string.h"
 using std::invalid_argument;
 
-//TODO: DECONSTRUCTOR FIX
-
 //CONSTRUCTORS
 Person::Person()
 {
@@ -18,7 +16,7 @@ Person::Person(const char* name, const char* egn, const char* address, Professio
 	SetName(name);
 
 	ValidateEGN(egn);
-	this->EGN = new char[strlen(egn)];
+	this->EGN = new char[strlen(egn) + 1];
 	strcpy(this->EGN, egn);
 
 	SetAddress(address);
@@ -30,13 +28,13 @@ Person::Person(const char* name, const char* egn, const char* address, Professio
 
 Person::Person(const Person& otherPerson)
 {
-	this->name = new char[strlen(otherPerson.name)];
+	this->name = new char[strlen(otherPerson.name) + 1];
 	strcpy(this->name, otherPerson.name);
 
-	this->EGN = new char[strlen(otherPerson.EGN)];
+	this->EGN = new char[strlen(otherPerson.EGN) + 1];
 	strcpy(this->EGN, otherPerson.EGN);
 
-	this->address = new char[strlen(otherPerson.address)];
+	this->address = new char[strlen(otherPerson.address) + 1];
 	strcpy(this->address, otherPerson.address);
 
 	this->age = otherPerson.age;
@@ -47,13 +45,13 @@ Person::Person(const Person& otherPerson)
 
 Person& Person::operator = (const Person& otherPerson)
 {
-	this->name = new char[strlen(otherPerson.name)];
+	this->name = new char[strlen(otherPerson.name) + 1];
 	strcpy(this->name, otherPerson.name);
 
-	this->EGN = new char[strlen(otherPerson.EGN)];
+	this->EGN = new char[strlen(otherPerson.EGN) + 1];
 	strcpy(this->EGN, otherPerson.EGN);
 
-	this->address = new char[strlen(otherPerson.address)];
+	this->address = new char[strlen(otherPerson.address) + 1];
 	strcpy(this->address, otherPerson.address);
 
 	this->age = otherPerson.age;
@@ -165,7 +163,7 @@ void Person::SetName(const char* name)
 		throw invalid_argument("Name can't be null!");
 	}
 
-	this->name = new char[strlen(name)];
+	this->name = new char[strlen(name) + 1];
 	strcpy(this->name, name);
 }
 
@@ -188,7 +186,7 @@ void Person::SetAddress(const char* address)
 		throw invalid_argument("Address can't be null!");
 	}
 
-	this->address = new char[strlen(address)];
+	this->address = new char[strlen(address) + 1];
 	strcpy(this->address, address);
 }
 
