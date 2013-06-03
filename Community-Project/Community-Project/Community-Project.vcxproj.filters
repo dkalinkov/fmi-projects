@@ -24,12 +24,18 @@
     <ClInclude Include="SexEnum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Community.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectExamples.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Community.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

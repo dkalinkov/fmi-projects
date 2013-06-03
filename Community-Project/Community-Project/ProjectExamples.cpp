@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include "Person.h"
-using namespace std;
+using std::cout;
+using std::endl;
 
 void main()
 {

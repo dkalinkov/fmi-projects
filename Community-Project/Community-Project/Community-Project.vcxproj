@@ -78,11 +78,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Community.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="ProfessionEnum.h" />
     <ClInclude Include="SexEnum.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Community.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="ProjectExamples.cpp" />
   </ItemGroup>

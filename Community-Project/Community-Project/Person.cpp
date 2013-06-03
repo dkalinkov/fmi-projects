@@ -1,9 +1,7 @@
 #include <iostream>
 #include <cstring>
-#include <stdlib.h>
 #include <stdexcept>
 #include "Person.h"
-#include "string.h"
 using std::invalid_argument;
 
 //CONSTRUCTORS
@@ -11,7 +9,7 @@ Person::Person()
 {
 }
 
-Person::Person(const char* name, const char* egn, const char* address, ProfessionEnum job, double income)
+Person::Person(const char* name, const char* egn, const char* address = "", ProfessionEnum job = Unemployed, double income = 0)
 {
 	SetName(name);
 
