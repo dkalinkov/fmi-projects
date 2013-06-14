@@ -11,18 +11,24 @@ Community::Community(const char* name, const char* foundationDate, Person& found
 {
 	SetName(name);
 
+	if (!foundationDate)
+	{
+		throw invalid_argument("Foundation date must not be null.");
+	}
+
 	this->foundationDate = new char[strlen(foundationDate) + 1];
 	strcpy(this->foundationDate, foundationDate);
 
 	SetFounder(founder);
 	SetMaxMembersCount(maxMembersCount);
+	this->membersCount = 0;
 	
-	this->members = new Person[maxMembersCount];
+	this->members = new Person[5];
 }
 
 Community::Community(const Community& otherCommunity)
 {
-
+	init(otherCommunity);
 }
 
 Community& Community::operator= (const Community& otherCommunity)
@@ -33,7 +39,7 @@ Community& Community::operator= (const Community& otherCommunity)
 		delete[] foundationDate;
 		delete[] members;
 
-
+		init(otherCommunity);
 	}
 
 	return *this;
@@ -48,6 +54,24 @@ Community::~Community()
 }
 
 //PRIVATE METHODS
+void Community::init(const Community& otherCommunity)
+{
+	this->name = new char[strlen(otherCommunity.name) + 1];
+	strcpy(this->name, otherCommunity.name);
+
+	this->foundationDate = new char[strlen(otherCommunity.foundationDate) + 1];
+	strcpy(this->foundationDate, otherCommunity.foundationDate);
+
+	this->founder = otherCommunity.founder;
+	this->maxMembersCount = otherCommunity.maxMembersCount;
+	this->membersCount = otherCommunity.membersCount;
+
+	this->members = new Person[otherCommunity.membersCount];
+	for (int index = 0; index < this->membersCount; index++)
+	{
+		this->members[index] = otherCommunity.members[index];
+	}
+}
 
 //PUBLIC METHODS
 bool Community::IsFull() const
@@ -110,6 +134,10 @@ void Community::SetFounder(Person& founder)
 
 void Community::SetMaxMembersCount(int number)
 {
+	if (number <= 2)
+	{
+		throw invalid_argument("Max members cound must not above 2.");
+	}
 	this->maxMembersCount = number;
 }
 

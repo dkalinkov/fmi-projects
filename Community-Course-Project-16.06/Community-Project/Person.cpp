@@ -136,6 +136,22 @@ void Person::Initialise(const char* name, const char* egn, const char* address, 
 	this->income = income;
 }
 
+//Redefining operators
+bool Person::operator== (const Person& otherPerson)
+{
+	if (*this->EGN == *otherPerson.EGN)
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool Person::operator!= (const Person& otherPerson)
+{
+	return *this == otherPerson;
+}
+
 //Public Methods
 char* Person::JobAsString() const
 {
@@ -253,6 +269,7 @@ void Person::SetIncome(double income)
 	}
 }
 
+//Other methods
 std::ostream& operator <<(std::ostream& output, const Person& person)
 {
 	person.Information(output);

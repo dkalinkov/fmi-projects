@@ -28,6 +28,9 @@ public:
 	Person& operator = (const Person&);
 	~Person();
 
+	bool operator== (const Person&);
+	bool operator!= (const Person&);
+
 	char* GetName() const;
 	char* GetEGN() const;
 	char* GetAddress() const;

@@ -14,6 +14,8 @@ private:
 	Person* members;
 	//TODO: ADD COMMUNITIES COUNT. I HAVE A MISUNDERSTANDING WITH THE OBJECTIVE!
 
+	void init(const Community&);
+
 public:
 	Community(const char*, const char*, Person&, int);
 	Community(const Community&);
@@ -36,7 +38,7 @@ public:
 	bool IsFull() const;
 	bool IsMember(const Person&) const;
 	bool IsMember(const char*) const;
-	void Information() const;
+	void Information(std::ostream&) const;
 };
 
 std::ostream& operator <<(std::ostream& output, const Community& person);
