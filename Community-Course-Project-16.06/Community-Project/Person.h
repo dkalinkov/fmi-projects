@@ -19,6 +19,7 @@ private:
 	unsigned short CalculateAge() const;
 	SexEnum GetSexFromEGN() const;
 	void ValidateEGN(const char*) const;
+	void Initialise(const char*, const char*, const char*, ProfessionEnum, double);
 
 public:
 	Person();
@@ -34,13 +35,13 @@ public:
 	SexEnum GetSexType() const;
 	ProfessionEnum GetJob() const;
 	double GetIncome() const;
-	char* JobAsString() const;
 
 	void SetName(const char*);		
 	void SetAddress(const char*);	
 	void SetJob(ProfessionEnum);	
 	void SetIncome(double);
 
+	char* JobAsString() const;
 	void Information(std::ostream&) const;
 };
 

@@ -4,6 +4,8 @@
 #include "Community.h"
 using std::invalid_argument;
 
+//TODO: Proper destructor
+
 //CONSTRUCTORS
 Community::Community(const char* name, const char* foundationDate, Person& founder, int maxMembersCount)
 {
@@ -18,11 +20,30 @@ Community::Community(const char* name, const char* foundationDate, Person& found
 	this->members = new Person[maxMembersCount];
 }
 
+Community::Community(const Community& otherCommunity)
+{
+
+}
+
+Community& Community::operator= (const Community& otherCommunity)
+{
+	if (this != &otherCommunity)
+	{
+		delete[] name;
+		delete[] foundationDate;
+		delete[] members;
+
+
+	}
+
+	return *this;
+}
+
 Community::~Community()
 {
 	delete[] name;
 	delete[] foundationDate;
-	delete founder;
+	//delete founder;
 	delete[] members;
 }
 

@@ -119,6 +119,23 @@ void Person::ValidateEGN(const char* egn) const
 	}
 }
 
+void Person::Initialise(const char* name, const char* egn, const char* address, ProfessionEnum job, double income)
+{
+	this->name = new char[strlen(name) + 1];
+	strcpy(this->name, name);
+
+	this->EGN = new char[strlen(egn) + 1];
+	strcpy(this->EGN, egn);
+
+	this->address = new char[strlen(address) + 1];
+	strcpy(this->address, address);
+
+	this->age = CalculateAge();
+	this->sex = GetSexFromEGN();
+	this->job = job;
+	this->income = income;
+}
+
 //Public Methods
 char* Person::JobAsString() const
 {
