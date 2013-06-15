@@ -178,13 +178,13 @@ char* Person::JobAsString() const
 
 void Person::Information(std::ostream& output = std::cout) const
 {
-	output << "Name: "<< this->GetName() 
-		<<"\nEGN: "<< this->GetEGN() 
-		<<"\nAddress: "<< this->GetAddress() 
-		<<"\nAge: "<< this->GetAge() 
+	output << "Name: "<< this->GetName()
+		<<"\nEGN: "<< this->GetEGN()
+		<<"\nAddress: "<< this->GetAddress()
+		<<"\nAge: "<< this->GetAge()
 		<<"\nSex: "<< (this->GetSexType() == 0 ? "Male" : "Female")
 		<<"\nJob: "<< this->JobAsString()
-		<<"\nIncome: "<< this->GetIncome() 
+		<<"\nIncome: "<< this->GetIncome()
 		<< std::endl;
 }
 
