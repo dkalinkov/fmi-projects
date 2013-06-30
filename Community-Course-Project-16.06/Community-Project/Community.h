@@ -15,7 +15,7 @@ private:
 	unsigned maxMembersCount;
 	unsigned membersCount;
 	Person* members;
-	// TODO: ADD COMMUNITIES COUNT. I HAVE A MISUNDERSTANDING WITH THE OBJECTIVE!
+	static int comCount;
 
 	void init(const Community&);
 	void ResizeCommunity(bool);
@@ -28,13 +28,13 @@ public:
 	Community& operator = (const Community&);
 	~Community();
 
-	char* GetName() const;
-	char* GetFoundationDate() const;
+	const char* GetName() const;
+	const char* GetFoundationDate() const;
 	Person GetFounder() const;
 	unsigned GetMaxMembersCount() const;
 	unsigned GetMembersCount() const;
 	Person* GetMembers() const;
-	// TODO: Add communities getter
+	int GetComCount() const;
 
 	void SetName(const char*);
 	void SetFounder(Person&);

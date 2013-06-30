@@ -29,6 +29,8 @@ int main()
 		vis.AddMember(pesho);
 		vis.AddMember(grozo);
 
+		cout << vis.GetComCount();
+
 		writeInFile(fileName, vis);
 	}
 	catch (std::exception& ex)

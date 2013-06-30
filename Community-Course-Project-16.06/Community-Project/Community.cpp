@@ -24,6 +24,8 @@ Community::Community(const char* name, const char* foundationDate, Person& found
 
 	this->members = new Person[currSize];
 	AddMember(founder);
+
+	this->comCount++;
 }
 
 Community::Community(const Community& otherCommunity)
@@ -50,6 +52,15 @@ Community::~Community()
 	delete[] name;
 	delete[] foundationDate;
 	delete[] members;
+	this->comCount--;
+}
+
+//STATIC MEMBERS
+int Community::comCount = 0;
+
+int Community::GetComCount() const
+{
+    return this->comCount;
 }
 
 //PRIVATE METHODS
@@ -70,6 +81,8 @@ void Community::init(const Community& otherCommunity)
 	{
 		this->members[index] = otherCommunity.members[index];
 	}
+
+	this->comCount++;
 }
 
 void Community::ResizeCommunity(bool enlarge)
@@ -205,12 +218,12 @@ void Community::Information(std::ostream& output = std::cout) const
 }
 
 //GETTERS
-char* Community::GetName() const
+const char* Community::GetName() const
 {
 	return this->name;
 }
 
-char* Community::GetFoundationDate() const
+const char* Community::GetFoundationDate() const
 {
 	return this->foundationDate;
 }

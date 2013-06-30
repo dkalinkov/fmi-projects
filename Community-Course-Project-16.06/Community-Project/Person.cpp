@@ -153,7 +153,7 @@ bool Person::operator!= (const Person& otherPerson)
 }
 
 //Public Methods
-char* Person::JobAsString() const
+const char* Person::JobAsString() const
 {
 	switch (job)
 	{
@@ -189,7 +189,7 @@ void Person::Information(std::ostream& output = std::cout) const
 }
 
 //Getter and setter for name
-char* Person::GetName() const
+const char* Person::GetName() const
 {
 	return this->name;
 }
@@ -206,13 +206,13 @@ void Person::SetName(const char* name)
 }
 
 //Getter for EGN
-char* Person::GetEGN() const
+const char* Person::GetEGN() const
 {
 	return this->EGN;
 }
 
 //Getter and setter for address
-char* Person::GetAddress() const
+const char* Person::GetAddress() const
 {
 	return this->address;
 }

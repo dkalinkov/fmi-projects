@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1372588127 source:d:\dropbox\github\fmi-projects\community-course-project-16.06\community-project\person.cpp
+	<iostream>
+	<cstring>
+	<stdexcept>
+	"Person.h"
+
+1372588080 d:\dropbox\github\fmi-projects\community-course-project-16.06\community-project\person.h
+	<ostream>
+	"SexEnum.h"
+	"ProfessionEnum.h"
+
+1370193567 d:\dropbox\github\fmi-projects\community-course-project-16.06\community-project\sexenum.h
+
+1370189282 d:\dropbox\github\fmi-projects\community-course-project-16.06\community-project\professionenum.h
+
+1371305358 source:d:\dropbox\github\fmi-projects\community-course-project-16.06\community-project\projectexamples.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	"Person.h"
+	"Community.h"
+
+1372588346 d:\dropbox\github\fmi-projects\community-course-project-16.06\community-project\community.h
+	<vector>
+	"Person.h"
+
+1372588380 source:d:\dropbox\github\fmi-projects\community-course-project-16.06\community-project\community.cpp
+	<stdexcept>
+	<iostream>
+	<cstring>
+	"Community.h"
+

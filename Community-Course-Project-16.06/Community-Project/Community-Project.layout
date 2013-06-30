@@ -1,9 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Person.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Community.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4385" topLine="191" />
+			<Cursor1 position="1220" topLine="8" />
+		</Cursor>
+		<Folding>
+			<Collapse line="8" />
+			<Collapse line="31" />
+			<Collapse line="36" />
+			<Collapse line="50" />
+			<Collapse line="67" />
+			<Collapse line="88" />
+			<Collapse line="108" />
+			<Collapse line="121" />
+			<Collapse line="130" />
+			<Collapse line="153" />
+			<Collapse line="178" />
+			<Collapse line="188" />
+			<Collapse line="193" />
+			<Collapse line="206" />
+			<Collapse line="221" />
+			<Collapse line="226" />
+			<Collapse line="231" />
+			<Collapse line="236" />
+			<Collapse line="241" />
+			<Collapse line="246" />
+			<Collapse line="252" />
+			<Collapse line="263" />
+			<Collapse line="268" />
+			<Collapse line="278" />
+			<Collapse line="284" />
+			<Collapse line="290" />
+			<Collapse line="310" />
+			<Collapse line="333" />
+			<Collapse line="348" />
+			<Collapse line="363" />
+			<Collapse line="382" />
+			<Collapse line="400" />
+		</Folding>
+	</File>
+	<File name="Community.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="286" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="Person.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4502" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="8" />
+			<Collapse line="12" />
+			<Collapse line="27" />
+			<Collapse line="44" />
+			<Collapse line="70" />
+			<Collapse line="78" />
+			<Collapse line="86" />
+			<Collapse line="100" />
+			<Collapse line="122" />
+			<Collapse line="140" />
+			<Collapse line="150" />
+			<Collapse line="156" />
+			<Collapse line="179" />
+			<Collapse line="192" />
+			<Collapse line="197" />
+			<Collapse line="209" />
+			<Collapse line="215" />
+			<Collapse line="220" />
+			<Collapse line="232" />
+			<Collapse line="238" />
+			<Collapse line="244" />
+			<Collapse line="249" />
+			<Collapse line="255" />
+			<Collapse line="260" />
+			<Collapse line="273" />
+		</Folding>
+	</File>
+	<File name="Person.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1047" topLine="32" />
+		</Cursor>
+	</File>
+	<File name="ProjectExamples.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="814" topLine="20" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

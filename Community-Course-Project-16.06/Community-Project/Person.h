@@ -31,20 +31,20 @@ public:
 	bool operator== (const Person&);
 	bool operator!= (const Person&);
 
-	char* GetName() const;
-	char* GetEGN() const;
-	char* GetAddress() const;
+	const char* GetName() const;
+	const char* GetEGN() const;
+	const char* GetAddress() const;
 	unsigned short GetAge() const;
 	SexEnum GetSexType() const;
 	ProfessionEnum GetJob() const;
 	double GetIncome() const;
 
-	void SetName(const char*);		
-	void SetAddress(const char*);	
-	void SetJob(ProfessionEnum);	
+	void SetName(const char*);
+	void SetAddress(const char*);
+	void SetJob(ProfessionEnum);
 	void SetIncome(double);
 
-	char* JobAsString() const;
+	const char* JobAsString() const;
 	void Information(std::ostream&) const;
 };
 
