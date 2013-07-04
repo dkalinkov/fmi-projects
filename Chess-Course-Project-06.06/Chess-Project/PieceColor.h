@@ -5,6 +5,6 @@ enum PieceColor
 {
 	White,
 	Black
-}
+};
 
 #endif

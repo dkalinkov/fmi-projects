@@ -1,21 +1,22 @@
 #ifndef SQUARE_H
 #define SQUARE_H
 
+#include "ChessPiece.h"
+
 class Square
 {
 private:
-	int posX;
-	int posY;
+	ChessPiece* piece;
+	bool isEmpty;
 
 public:
 	Square();
 	~Square();
 
-	int GetPosX() const;
-	int GetPosY() const;
+	bool IsSquareFree() const;
 
-	void SetPosX(int);
-	void SetPosY(int);
+	ChessPiece& GetPiece() const;
+	void SetPiece(ChessPiece*);
 };
 
 #endif

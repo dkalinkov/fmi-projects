@@ -1,36 +1,43 @@
 #include <cstring>
 #include "Square.h"
 
-
+//CONSTRUCTORS
 Square::Square()
 {
+	this->piece = NULL;
+	this->isEmpty = true;
 }
-
 
 Square::~Square()
 {
+	delete piece;
 }
 
 //PUBLIC METHODS
-
-//GETTERS
-int Square::GetPosX() const
+bool Square::IsSquareFree() const
 {
-	return this->posX;
+	return this->isEmpty;
 }
 
-int Square::GetPosY() const
+//GETTERS
+ChessPiece& Square::GetPiece() const
 {
-	return this->posY;
+	return *this->piece;
 }
 
 //SETTERS
-void Square::SetPosX(int posX)
+void Square::SetPiece(ChessPiece* piece) 
 {
-	this->posX = posX;
-}
-
-void Square::SetPosY(int posY)
-{
-	this->posY = posY;
+	if (piece == NULL)
+	{
+		delete piece;
+		this->isEmpty = true;
+		piece = NULL;
+	}
+	else
+	{
+		delete piece;
+		this->isEmpty = false;
+		this->piece = piece;
+	}
 }

@@ -51,7 +51,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -79,12 +79,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ChessPiece.h" />
+    <ClInclude Include="ChessPawn.h" />
+    <ClInclude Include="GameBoard.h" />
     <ClInclude Include="PieceColor.h" />
     <ClInclude Include="PieceType.h" />
     <ClInclude Include="Square.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChessPiece.cpp" />
+    <ClCompile Include="Example.cpp" />
+    <ClCompile Include="ChessPawn.cpp" />
+    <ClCompile Include="GameBoard.cpp" />
     <ClCompile Include="Square.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

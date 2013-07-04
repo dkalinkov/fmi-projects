@@ -9,6 +9,6 @@ enum PieceType {
 	Queen,
 	King,
 	None
-}
+};
 
 #endif
