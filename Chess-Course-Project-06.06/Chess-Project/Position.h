@@ -8,8 +8,8 @@ using std::invalid_argument;
 class Position
 {
 public:
-	int X;
-	int Y;
+	int X; //row
+	int Y; //col
 
 	Position(std::string coords)
 	{
@@ -18,8 +18,8 @@ public:
 			throw invalid_argument("Wrong coordinates.");
 		}
 
-		this->Y = coords.at(0) - 'a';
 		this->X = coords.at(1) - '1';
+		this->Y = coords.at(0) - 'a';
 
 		if (X < 0 || X > 7 || Y < 0 || Y > 7)
 		{

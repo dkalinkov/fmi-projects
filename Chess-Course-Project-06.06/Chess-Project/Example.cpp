@@ -24,9 +24,23 @@ int main()
 			Position currPos(input.substr(0, 2));
 			Position newPos(input.substr(3));
 
-			ChessPiece* piece = &board.GetPiece(currPos.X, currPos.Y);
-			board.SetPiece(piece, newPos.X, newPos.Y);
-			board.SetPiece(0, currPos.X, currPos.Y);
+			if (!board.IsSquareFree(currPos))
+			{
+				ChessPiece* piece = &board.GetPiece(currPos.X, currPos.Y);
+				if (piece->IsMoveLegal(currPos, newPos, &board))
+				{
+					board.SetPiece(piece, newPos.X, newPos.Y);
+					board.SetPiece(0, currPos.X, currPos.Y);
+				}
+				else
+				{
+					cout << "Illegal move! Try again." << endl;
+				}
+			}
+			else
+			{
+				cout << "Empty square selected! Try again." << endl;
+			}
 
 			board.DrawBoard();
 

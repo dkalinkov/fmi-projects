@@ -11,28 +11,28 @@ ChessPawn::ChessPawn(PieceColor color) : ChessPiece(color, type)
 bool ChessPawn::IsMoveLegal(Position currPos, Position newPos, GameBoard* board) const 
 {
 	if (board->IsSquareFree(newPos)) {
-		if (newPos.X == currPos.X) {
+		if (newPos.Y == currPos.Y) {
 			if (this->color == White) {
-				if (newPos.Y == currPos.Y + 1) {
+				if (newPos.X == currPos.X + 1) {
 					return true;
 				}
 			}
 			else {
-				if (newPos.Y == currPos.Y - 1) {
+				if (newPos.X == currPos.X - 1) {
 					return true;
 				}
 			}
 		}
 	}
 	else {
-		if (newPos.X == currPos.X + 1 || newPos.X == currPos.X - 1) {
+		if (newPos.Y == currPos.Y + 1 || newPos.Y == currPos.Y - 1) {
 			if (this->color == White) {
-				if (newPos.Y == currPos.Y + 1) {
+				if (newPos.X == currPos.X + 1) {
 					return true;
 				}
 			}
 			else {
-				if (newPos.Y == currPos.Y - 1) {
+				if (newPos.X == currPos.X - 1) {
 					return true;
 				}
 			}

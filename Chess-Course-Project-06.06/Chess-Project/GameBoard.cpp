@@ -74,12 +74,6 @@ void GameBoard::InitBoard()
 	board[7][4]->SetPiece(new ChessKing(Black));
 }
 
-//RETURNS THE GAME BOARD
-Square* GameBoard::GetBoard() const
-{
-	return board[fieldSize][fieldSize];
-}
-
 //DRAWS THE GAME BOARD TO THE CONSOLE
 void GameBoard::DrawBoard() const
 {

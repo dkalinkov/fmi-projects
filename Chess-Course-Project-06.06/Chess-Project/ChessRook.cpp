@@ -10,12 +10,12 @@ ChessRook::ChessRook(PieceColor color) : ChessPiece(color, type)
 //PUBLIC METHODS
 bool ChessRook::IsMoveLegal(Position currPos, Position newPos, GameBoard* board) const 
 {
-	if (currPos.Y == newPos.Y)
+	if (currPos.X == newPos.X)
 	{
-		int xOffset = (newPos.X - currPos.X) > 0 ? 1 : -1;
-		for (int checkX = currPos.X + xOffset; checkX != newPos.X; checkX += xOffset)
+		int yOffset = (newPos.Y - currPos.Y) > 0 ? 1 : -1;
+		for (int checkY = currPos.Y + yOffset; checkY != newPos.Y; checkY += yOffset)
 		{
-			ChessPiece* piece = &board->GetPiece(currPos.X, checkX);
+			ChessPiece* piece = &board->GetPiece(currPos.X, checkY);
 			if (piece != 0) {
 				return false;
 			}
@@ -23,12 +23,12 @@ bool ChessRook::IsMoveLegal(Position currPos, Position newPos, GameBoard* board)
 
 		return true;
 	}
-	else if (currPos.X == newPos.X)
+	else if (currPos.Y == newPos.Y)
 	{
-		int yOffset = (newPos.Y - currPos.Y) > 0 ? 1 : -1;
-		for (int yCheck = currPos.Y + yOffset; yCheck != newPos.Y; yCheck += yOffset)
+		int xOffset = (newPos.X - currPos.X) > 0 ? 1 : -1;
+		for (int xCheck = currPos.X + xOffset; xCheck != newPos.X; xCheck += xOffset)
 		{
-			ChessPiece* piece = &board->GetPiece(currPos.Y, yCheck);
+			ChessPiece* piece = &board->GetPiece(xCheck, currPos.Y);
 			if (piece != 0) {
 				return false;
 			}
