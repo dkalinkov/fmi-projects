@@ -78,6 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ChessKnight.h" />
     <ClInclude Include="ChessPiece.h" />
     <ClInclude Include="ChessPawn.h" />
     <ClInclude Include="GameBoard.h" />
@@ -86,6 +87,7 @@
     <ClInclude Include="Square.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ChessKnight.cpp" />
     <ClCompile Include="ChessPiece.cpp" />
     <ClCompile Include="Example.cpp" />
     <ClCompile Include="ChessPawn.cpp" />

@@ -19,9 +19,7 @@ public:
 	virtual ChessPiece& operator= (const ChessPiece&);
 	virtual ~ChessPiece() { }
 
-	virtual ChessPiece* clone() const = 0;
 	virtual bool IsMoveLegal() const = 0;
-
 	PieceColor GetColor() const;
 	PieceType GetType() const;
 	virtual char GetSymbol() const = 0;

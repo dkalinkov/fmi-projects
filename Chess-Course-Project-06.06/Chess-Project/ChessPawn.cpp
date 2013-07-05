@@ -13,12 +13,6 @@ bool ChessPawn::IsMoveLegal() const
 	return false;
 }
 
-//CLONE METHOD
-ChessPawn* ChessPawn::clone() const
-{
-	return new ChessPawn(*this);
-}
-
 //GET SYMBOL
 char ChessPawn::GetSymbol() const
 {

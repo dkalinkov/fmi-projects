@@ -1,12 +1,12 @@
-#ifndef PAWN_H
-#define PAWN_H
+#ifndef KNIGHT_H
+#define KNIGHT_H
 
 #include "ChessPiece.h"
 
-class ChessPawn : public ChessPiece
+class ChessKnight : public ChessPiece
 {
 public:
-	ChessPawn(PieceColor color);
+	ChessKnight(PieceColor color);
 
 	virtual bool IsMoveLegal() const;
 	virtual char GetSymbol() const;
