@@ -74,6 +74,12 @@ void GameBoard::InitBoard()
 	board[7][4]->SetPiece(new ChessKing(Black));
 }
 
+//RETURNS THE GAME BOARD
+Square* GameBoard::GetBoard() const
+{
+	return board[fieldSize][fieldSize];
+}
+
 //DRAWS THE GAME BOARD TO THE CONSOLE
 void GameBoard::DrawBoard() const
 {
@@ -119,10 +125,10 @@ void GameBoard::DrawBoard() const
 }
 
 //CHECKS IF SQUARE IS FREE
-//bool GameBoard::IsSquareFree(Position pos) const
-//{
-//	return board[pos.X][pos.Y]->IsSquareEmpty();
-//}
+bool GameBoard::IsSquareFree(Position pos) const
+{
+	return board[pos.X][pos.Y]->IsSquareEmpty();
+}
 
 //GETS THE FIELD SIZE (N x N) RETURNS N
 int GameBoard::GetBoardSize() const

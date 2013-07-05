@@ -1,4 +1,5 @@
 #include "ChessPawn.h"
+#include "GameBoard.h"
 
 //CONSTRUCTOR
 ChessPawn::ChessPawn(PieceColor color) : ChessPiece(color, type)
@@ -7,9 +8,9 @@ ChessPawn::ChessPawn(PieceColor color) : ChessPiece(color, type)
 }
 
 //PUBLIC METHODS
-bool ChessPawn::IsMoveLegal(Position currPos, Position newPos) const 
+bool ChessPawn::IsMoveLegal(Position currPos, Position newPos, GameBoard* board) const 
 {
-	if (true) {//board->IsSquareFree(newPos)) {
+	if (board->IsSquareFree(newPos)) {
 		if (newPos.X == currPos.X) {
 			if (this->color == White) {
 				if (newPos.Y == currPos.Y + 1) {

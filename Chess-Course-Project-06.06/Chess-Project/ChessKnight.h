@@ -8,7 +8,7 @@ class ChessKnight : public ChessPiece
 public:
 	ChessKnight(PieceColor color);
 
-	virtual bool IsMoveLegal(Position currPos, Position newPos) const;
+	virtual bool IsMoveLegal(Position currPos, Position newPos, GameBoard*) const;
 	virtual char GetSymbol() const;
 };
 

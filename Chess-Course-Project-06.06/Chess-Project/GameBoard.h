@@ -17,7 +17,8 @@ public:
 	~GameBoard();
 
 	void DrawBoard() const;
-	//bool IsSquareFree(Position) const;
+	bool IsSquareFree(Position) const;
+	Square* GetBoard() const;
 	int GetBoardSize() const;
 	ChessPiece& GetPiece(int posX, int posY) const;
 	void SetPiece(ChessPiece* piece, int posX, int posY);

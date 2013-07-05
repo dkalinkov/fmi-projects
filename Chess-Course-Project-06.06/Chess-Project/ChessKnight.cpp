@@ -1,4 +1,5 @@
 #include "ChessKnight.h"
+#include "GameBoard.h"
 
 //CONSTRUCTOR
 ChessKnight::ChessKnight(PieceColor color): ChessPiece(color, type)
@@ -7,7 +8,7 @@ ChessKnight::ChessKnight(PieceColor color): ChessPiece(color, type)
 }
 
 //PUBLIC METHODS
-bool ChessKnight::IsMoveLegal(Position currPos, Position newPos) const 
+bool ChessKnight::IsMoveLegal(Position currPos, Position newPos, GameBoard* board) const 
 {
 	if (currPos.X == newPos.X + 1 || currPos.X == newPos.X - 1) {
 		if (currPos.Y == newPos.Y + 2 || currPos.Y == newPos.Y - 2) {
