@@ -86,6 +86,7 @@
     <ClInclude Include="GameBoard.h" />
     <ClInclude Include="PieceColor.h" />
     <ClInclude Include="PieceType.h" />
+    <ClInclude Include="ChessQueen.h" />
     <ClInclude Include="Square.h" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +97,7 @@
     <ClCompile Include="Example.cpp" />
     <ClCompile Include="ChessPawn.cpp" />
     <ClCompile Include="GameBoard.cpp" />
+    <ClCompile Include="ChessQueen.cpp" />
     <ClCompile Include="Square.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -4,6 +4,7 @@
 #include "ChessKnight.h"
 #include "ChessBishop.h"
 #include "ChessRook.h"
+#include "ChessQueen.h"
 using std::cout;
 using std::endl;
 
@@ -60,6 +61,8 @@ void GameBoard::InitBoard()
 	}
 
 	//Init queens
+	board[0][3]->SetPiece(new ChessQueen(White));
+	board[7][3]->SetPiece(new ChessQueen(Black));
 	
 	//Init kings
 }
