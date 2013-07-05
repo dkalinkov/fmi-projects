@@ -82,6 +82,7 @@
     <ClInclude Include="ChessKnight.h" />
     <ClInclude Include="ChessPiece.h" />
     <ClInclude Include="ChessPawn.h" />
+    <ClInclude Include="ChessRook.h" />
     <ClInclude Include="GameBoard.h" />
     <ClInclude Include="PieceColor.h" />
     <ClInclude Include="PieceType.h" />
@@ -91,6 +92,7 @@
     <ClCompile Include="ChessBishop.cpp" />
     <ClCompile Include="ChessKnight.cpp" />
     <ClCompile Include="ChessPiece.cpp" />
+    <ClCompile Include="ChessRook.cpp" />
     <ClCompile Include="Example.cpp" />
     <ClCompile Include="ChessPawn.cpp" />
     <ClCompile Include="GameBoard.cpp" />
