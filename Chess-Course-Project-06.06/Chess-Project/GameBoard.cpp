@@ -2,6 +2,7 @@
 #include "GameBoard.h"
 #include "ChessPawn.h"
 #include "ChessKnight.h"
+#include "ChessBishop.h"
 using std::cout;
 using std::endl;
 
@@ -32,16 +33,24 @@ GameBoard::~GameBoard()
 //INIT THE BOARD WHEN GAME STARTS
 void GameBoard::InitBoard()
 {
+	//Init pawns
 	for (int col = 0; col < fieldSize; col++)
 	{		
 		board[1][col]->SetPiece(new ChessPawn(White));
 		board[6][col]->SetPiece(new ChessPawn(Black));
 	}
 
+	//Init knights(horse)
 	board[0][1]->SetPiece(new ChessKnight(White));
 	board[0][6]->SetPiece(new ChessKnight(White));
 	board[7][1]->SetPiece(new ChessKnight(Black));
 	board[7][6]->SetPiece(new ChessKnight(Black));
+
+	//Init bishops(officer)
+	board[0][2]->SetPiece(new ChessBishop(White));
+	board[0][5]->SetPiece(new ChessBishop(White));
+	board[7][2]->SetPiece(new ChessBishop(Black));
+	board[7][5]->SetPiece(new ChessBishop(Black));
 }
 
 //DRAWS THE GAME BOARD TO THE CONSOLE
