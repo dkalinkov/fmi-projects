@@ -7,7 +7,7 @@ ChessKing::ChessKing(PieceColor color) : ChessPiece(color, type)
 }
 
 //PUBLIC METHODS
-bool ChessKing::IsMoveLegal() const 
+bool ChessKing::IsMoveLegal(Position currPos, Position newPos) const 
 {
 	// TODO: IMPLEMENT LOGIC
 	return false;

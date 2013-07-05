@@ -7,9 +7,12 @@ ChessBishop::ChessBishop(PieceColor color) : ChessPiece(color, type)
 }
 
 //PUBLIC METHODS
-bool ChessBishop::IsMoveLegal() const 
+bool ChessBishop::IsMoveLegal(Position currPos, Position newPos) const 
 {
-	// TODO: IMPLEMENT LOGIC
+	if ((newPos.X - currPos.X == newPos.Y - currPos.X) || (newPos.X - currPos.X == currPos.Y - currPos.X)) {
+
+	}
+
 	return false;
 }
 

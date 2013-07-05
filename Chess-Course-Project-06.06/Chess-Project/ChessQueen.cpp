@@ -7,7 +7,7 @@ ChessQueen::ChessQueen(PieceColor color) : ChessPiece(color, type)
 }
 
 //PUBLIC METHODS
-bool ChessQueen::IsMoveLegal() const 
+bool ChessQueen::IsMoveLegal(Position currPos, Position newPos) const 
 {
 	// TODO: IMPLEMENT LOGIC
 	return false;

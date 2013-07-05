@@ -8,7 +8,7 @@ class ChessQueen : public ChessPiece
 public:
 	ChessQueen(PieceColor color);
 
-	virtual bool IsMoveLegal() const;
+	virtual bool IsMoveLegal(Position currPos, Position newPos) const;
 	virtual char GetSymbol() const;
 };
 

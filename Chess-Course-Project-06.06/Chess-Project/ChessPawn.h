@@ -8,7 +8,7 @@ class ChessPawn : public ChessPiece
 public:
 	ChessPawn(PieceColor color);
 
-	virtual bool IsMoveLegal() const;
+	virtual bool IsMoveLegal(Position currPos, Position newPos) const;
 	virtual char GetSymbol() const;
 };
 

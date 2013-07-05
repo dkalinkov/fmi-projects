@@ -85,6 +85,7 @@
     <ClInclude Include="ChessPawn.h" />
     <ClInclude Include="ChessRook.h" />
     <ClInclude Include="GameBoard.h" />
+    <ClInclude Include="Position.h" />
     <ClInclude Include="PieceColor.h" />
     <ClInclude Include="PieceType.h" />
     <ClInclude Include="ChessQueen.h" />

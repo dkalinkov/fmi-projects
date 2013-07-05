@@ -7,7 +7,7 @@ ChessRook::ChessRook(PieceColor color) : ChessPiece(color, type)
 }
 
 //PUBLIC METHODS
-bool ChessRook::IsMoveLegal() const 
+bool ChessRook::IsMoveLegal(Position currPos, Position newPos) const 
 {
 	// TODO: IMPLEMENT LOGIC
 	return false;

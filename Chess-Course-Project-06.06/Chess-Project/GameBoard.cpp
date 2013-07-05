@@ -9,6 +9,8 @@
 using std::cout;
 using std::endl;
 
+// TODO: moje da polzvam SINGLETON za tozi klas
+
 //CONSTRUCTOR
 GameBoard::GameBoard()
 {
@@ -16,21 +18,23 @@ GameBoard::GameBoard()
 	{
 		for (int col = 0; col < fieldSize; col++)
 		{
-			//Square square;
 			this->board[row][col] = new Square();
 		}
 	}
+
+	InitBoard();
 }
 
 GameBoard::~GameBoard()
 {
-	for (int row = 0; row < fieldSize; row++)
-	{
-		for (int col = 0; col < fieldSize; col++)
-		{
-			delete board[row][col];
-		}
-	}
+	//for (int row = 0; row < fieldSize; row++)
+	//{
+	//	for (int col = 0; col < fieldSize; col++)
+	//	{
+	//		delete board[row][col];
+	//		board[row][col] = 0;
+	//	}
+	//}
 }
 
 //INIT THE BOARD WHEN GAME STARTS
@@ -64,7 +68,7 @@ void GameBoard::InitBoard()
 	//Init queens
 	board[0][3]->SetPiece(new ChessQueen(White));
 	board[7][3]->SetPiece(new ChessQueen(Black));
-	
+
 	//Init kings
 	board[0][4]->SetPiece(new ChessKing(White));
 	board[7][4]->SetPiece(new ChessKing(Black));
@@ -73,6 +77,7 @@ void GameBoard::InitBoard()
 //DRAWS THE GAME BOARD TO THE CONSOLE
 void GameBoard::DrawBoard() const
 {
+	//DRAW TOP LETTER INDEXES
 	char cols[8] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
 	cout << "    ";
 	for (int index = 0; index < fieldSize; index++)
@@ -80,13 +85,27 @@ void GameBoard::DrawBoard() const
 		cout << " " << cols[index] << "  ";
 	}
 
+	cout << endl << "   -";
+	for (int col = 0; col < fieldSize; col++)
+	{
+		cout << "----";
+	}
+
+	//DRAW FIELD
 	cout << endl;
 	for (int row = 0; row < fieldSize; row++)
 	{
 		cout << row + 1 << ". | ";
 		for (int col = 0; col < fieldSize; col++)
 		{
-			cout << board[row][col]->GetPieceSymbol() << " | ";
+			if (board[row][col]->IsSquareEmpty())
+			{
+				cout << "- | ";
+			}
+			else
+			{
+				cout << board[row][col]->GetPieceSymbol() << " | ";
+			}
 		}
 
 		cout << endl << "   -";
@@ -98,6 +117,12 @@ void GameBoard::DrawBoard() const
 		cout << endl;
 	}
 }
+
+//CHECKS IF SQUARE IS FREE
+//bool GameBoard::IsSquareFree(Position pos) const
+//{
+//	return board[pos.X][pos.Y]->IsSquareEmpty();
+//}
 
 //GETS THE FIELD SIZE (N x N) RETURNS N
 int GameBoard::GetBoardSize() const
@@ -116,4 +141,3 @@ ChessPiece& GameBoard::GetPiece(int posX, int posY) const
 {
 	return board[posX][posY]->GetPiece();
 }
-

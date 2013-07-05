@@ -3,8 +3,7 @@
 
 #include "PieceColor.h"
 #include "PieceType.h"
-
-// TODO: moje da dobavq neshto za pazene na vuzmojnite hodove, koito moje da pravi edna figura
+#include "Position.h"
 
 class ChessPiece
 {
@@ -13,13 +12,13 @@ protected:
 	PieceType type;
 
 public:
-	ChessPiece() { }
+	ChessPiece() {}
 	ChessPiece(PieceColor color, PieceType type);
 	ChessPiece(const ChessPiece*);
 	virtual ChessPiece& operator= (const ChessPiece&);
-	virtual ~ChessPiece() { }
+	virtual ~ChessPiece() {}
 
-	virtual bool IsMoveLegal() const = 0;
+	virtual bool IsMoveLegal(Position currPos, Position newPos) const = 0;
 	PieceColor GetColor() const;
 	PieceType GetType() const;
 	virtual char GetSymbol() const = 0;

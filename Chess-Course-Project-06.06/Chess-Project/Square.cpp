@@ -4,7 +4,7 @@
 //CONSTRUCTORS
 Square::Square()
 {
-	this->piece = NULL;
+	this->piece = 0;
 	this->isEmpty = true;
 }
 
@@ -27,26 +27,16 @@ ChessPiece& Square::GetPiece() const
 
 const char Square::GetPieceSymbol() const
 {
-	char symbol;
-	if (piece == NULL)
-	{
-		symbol = '-';
-	}
-	else
-	{
-		symbol = piece->GetSymbol();
-	}
-
-	return symbol;
+	return piece->GetSymbol();
 }
 
 //SETTERS
 void Square::SetPiece(ChessPiece* piece) 
 {
-	if (piece == NULL)
+	if (piece == 0)
 	{
 		delete piece;
-		piece = NULL;
+		piece = 0;
 		this->isEmpty = true;
 	}
 	else

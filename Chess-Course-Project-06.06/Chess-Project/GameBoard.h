@@ -10,15 +10,17 @@ private:
 	static const int fieldSize = 8;
 	Square* board[fieldSize][fieldSize]; 
 
+	void InitBoard();
+
 public:
 	GameBoard();
 	~GameBoard();
 
-	void InitBoard();
 	void DrawBoard() const;
+	//bool IsSquareFree(Position) const;
 	int GetBoardSize() const;
-	void SetPiece(ChessPiece*, int posX, int posY);
 	ChessPiece& GetPiece(int posX, int posY) const;
+	void SetPiece(ChessPiece* piece, int posX, int posY);
 };
 
 #endif
