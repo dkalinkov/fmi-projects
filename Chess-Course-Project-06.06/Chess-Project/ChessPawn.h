@@ -7,10 +7,10 @@ class ChessPawn : public ChessPiece
 {
 public:
 	ChessPawn(PieceColor color);
-	~ChessPawn() {}
 
-	//virtual ChessPawn* clone() const;
+	virtual ChessPawn* clone() const;
 	virtual bool IsMoveLegal() const;
+	virtual char GetSymbol() const;
 };
 
 #endif

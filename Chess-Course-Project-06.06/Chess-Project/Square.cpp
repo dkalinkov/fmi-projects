@@ -14,7 +14,7 @@ Square::~Square()
 }
 
 //PUBLIC METHODS
-bool Square::IsSquareFree() const
+bool Square::IsSquareEmpty() const
 {
 	return this->isEmpty;
 }
@@ -25,19 +25,33 @@ ChessPiece& Square::GetPiece() const
 	return *this->piece;
 }
 
+const char Square::GetPieceSymbol() const
+{
+	char symbol;
+	if (piece == NULL)
+	{
+		symbol = '-';
+	}
+	else
+	{
+		symbol = piece->GetSymbol();
+	}
+
+	return symbol;
+}
+
 //SETTERS
 void Square::SetPiece(ChessPiece* piece) 
 {
 	if (piece == NULL)
 	{
 		delete piece;
-		this->isEmpty = true;
 		piece = NULL;
+		this->isEmpty = true;
 	}
 	else
 	{
-		delete piece;
-		this->isEmpty = false;
 		this->piece = piece;
+		this->isEmpty = false;
 	}
 }

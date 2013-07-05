@@ -1,4 +1,8 @@
+#include <iostream>
 #include "GameBoard.h"
+#include "ChessPawn.h"
+using std::cout;
+using std::endl;
 
 //CONSTRUCTOR
 GameBoard::GameBoard()
@@ -7,9 +11,59 @@ GameBoard::GameBoard()
 	{
 		for (int col = 0; col < fieldSize; col++)
 		{
-			Square square;
-			this->board[row][col] = square;
+			//Square square;
+			this->board[row][col] = new Square();
 		}
+	}
+}
+
+GameBoard::~GameBoard()
+{
+	for (int row = 0; row < fieldSize; row++)
+	{
+		for (int col = 0; col < fieldSize; col++)
+		{
+			delete board[row][col];
+		}
+	}
+}
+
+//INIT THE BOARD WHEN GAME STARTS
+void GameBoard::InitBoard()
+{
+	for (int col = 0; col < fieldSize; col++)
+	{		
+		board[1][col]->SetPiece(new ChessPawn(White));
+		board[6][col]->SetPiece(new ChessPawn(Black));
+	}
+}
+
+//DRAWS THE GAME BOARD TO THE CONSOLE
+void GameBoard::DrawBoard() const
+{
+	char cols[8] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
+	cout << "    ";
+	for (int index = 0; index < fieldSize; index++)
+	{
+		cout << " " << cols[index] << "  ";
+	}
+
+	cout << endl;
+	for (int row = 0; row < fieldSize; row++)
+	{
+		cout << row + 1 << ". | ";
+		for (int col = 0; col < fieldSize; col++)
+		{
+			cout << board[row][col]->GetPieceSymbol() << " | ";
+		}
+
+		cout << endl << "   -";
+		for (int col = 0; col < fieldSize; col++)
+		{
+			cout << "----";
+		}
+
+		cout << endl;
 	}
 }
 
@@ -22,12 +76,12 @@ int GameBoard::GetBoardSize() const
 //SETS THE NEW PEACE TO THE PASSED BOARD COORDINATES
 void GameBoard::SetPiece(ChessPiece* piece, int posX, int posY)
 {
-	board[posX][posY].SetPiece(piece);
+	board[posX][posY]->SetPiece(piece);
 }
 
 //GETS THE PEACE LOCATED ON THE PASSED BOARD COORDINATES
 ChessPiece& GameBoard::GetPiece(int posX, int posY) const
 {
-	return board[posX][posY].GetPiece();
+	return board[posX][posY]->GetPiece();
 }
 

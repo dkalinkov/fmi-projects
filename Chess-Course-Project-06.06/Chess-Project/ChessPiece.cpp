@@ -7,7 +7,19 @@ ChessPiece::ChessPiece(PieceColor color, PieceType type = None)
 	this->type = type;
 }
 
-//PUBLIC METHODS
+ChessPiece::ChessPiece(const ChessPiece* other)
+{
+	this->type = other->GetType();
+	this->color = other->GetColor();
+}
+
+ChessPiece& ChessPiece::operator= (const ChessPiece& other)
+{
+	this->type = other.GetType();
+	this->color = other.GetColor();
+
+	return *this;
+}
 
 //GETTERS
 PieceColor ChessPiece::GetColor() const
@@ -18,25 +30,4 @@ PieceColor ChessPiece::GetColor() const
 PieceType ChessPiece::GetType() const
 {
 	return this->type;
-}
-
-const char* ChessPiece::GetTypeString() const
-{
-	switch (type)
-	{
-	case Pawn:
-		return "Pawn";
-	case Knight:
-		return "Knight";
-	case Bishop:
-		return "Bishop";
-	case Rook:
-		return "Rook";
-	case Queen:
-		return "Queen";
-	case King:
-		return "King";
-	default:
-		return "None";
-	}
 }

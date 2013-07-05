@@ -5,7 +5,6 @@
 #include "PieceType.h"
 
 // TODO: moje da dobavq neshto za pazene na vuzmojnite hodove, koito moje da pravi edna figura
-// TODO: da zabranq kopirashtite
 
 class ChessPiece
 {
@@ -16,14 +15,16 @@ protected:
 public:
 	ChessPiece() { }
 	ChessPiece(PieceColor color, PieceType type);
+	ChessPiece(const ChessPiece*);
+	virtual ChessPiece& operator= (const ChessPiece&);
 	virtual ~ChessPiece() { }
 
-	//virtual ChessPiece* clone() const = 0;
+	virtual ChessPiece* clone() const = 0;
 	virtual bool IsMoveLegal() const = 0;
 
 	PieceColor GetColor() const;
 	PieceType GetType() const;
-	const char* GetTypeString() const;
+	virtual char GetSymbol() const = 0;
 };
 
 #endif

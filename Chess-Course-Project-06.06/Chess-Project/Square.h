@@ -13,10 +13,11 @@ public:
 	Square();
 	~Square();
 
-	bool IsSquareFree() const;
+	bool IsSquareEmpty() const;
 
 	ChessPiece& GetPiece() const;
 	void SetPiece(ChessPiece*);
+	const char GetPieceSymbol() const;
 };
 
 #endif
