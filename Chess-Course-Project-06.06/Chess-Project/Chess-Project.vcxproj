@@ -79,6 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ChessBishop.h" />
+    <ClInclude Include="ChessKing.h" />
     <ClInclude Include="ChessKnight.h" />
     <ClInclude Include="ChessPiece.h" />
     <ClInclude Include="ChessPawn.h" />
@@ -91,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChessBishop.cpp" />
+    <ClCompile Include="ChessKing.cpp" />
     <ClCompile Include="ChessKnight.cpp" />
     <ClCompile Include="ChessPiece.cpp" />
     <ClCompile Include="ChessRook.cpp" />
