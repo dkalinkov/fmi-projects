@@ -16,5 +16,5 @@ bool ChessKnight::IsMoveLegal() const
 //GET SYMBOL
 char ChessKnight::GetSymbol() const
 {
-	return 'O';
+	return 'H';
 }

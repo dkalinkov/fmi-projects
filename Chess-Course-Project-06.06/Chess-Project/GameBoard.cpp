@@ -38,10 +38,10 @@ void GameBoard::InitBoard()
 		board[6][col]->SetPiece(new ChessPawn(Black));
 	}
 
-	board[0][2]->SetPiece(new ChessKnight(White));
-	board[0][5]->SetPiece(new ChessKnight(White));
-	board[7][2]->SetPiece(new ChessKnight(Black));
-	board[7][5]->SetPiece(new ChessKnight(Black));
+	board[0][1]->SetPiece(new ChessKnight(White));
+	board[0][6]->SetPiece(new ChessKnight(White));
+	board[7][1]->SetPiece(new ChessKnight(Black));
+	board[7][6]->SetPiece(new ChessKnight(Black));
 }
 
 //DRAWS THE GAME BOARD TO THE CONSOLE
