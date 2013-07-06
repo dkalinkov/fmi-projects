@@ -26,6 +26,17 @@ public:
 			throw invalid_argument("Position is out of board.");
 		}
 	}
+
+	Position(int x, int y)
+	{
+		this->X = x;
+		this->Y = y;
+
+		if (X < 0 || X > 7 || Y < 0 || Y > 7)
+		{
+			throw invalid_argument("Position is out of board.");
+		}
+	}
 };
 
 #endif

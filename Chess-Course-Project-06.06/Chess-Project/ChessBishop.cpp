@@ -10,7 +10,7 @@ ChessBishop::ChessBishop(PieceColor color) : ChessPiece(color, type)
 //PUBLIC METHODS
 bool ChessBishop::IsMoveLegal(Position currPos, Position newPos, GameBoard* board) const 
 {
-	if ((newPos.Y - currPos.Y == newPos.X - currPos.X) || (newPos.Y - currPos.Y == currPos.X - currPos.X)) {
+	if ((newPos.Y - currPos.Y == newPos.X - currPos.X) || (newPos.Y - currPos.Y == currPos.X - newPos.X)) {
 		int xOffset = (newPos.X - currPos.X) > 0 ? 1 : -1;
 		int yOffset = (newPos.Y - currPos.Y) > 0 ? 1 : -1;
 		int checkX, checkY;
@@ -18,8 +18,8 @@ bool ChessBishop::IsMoveLegal(Position currPos, Position newPos, GameBoard* boar
 			checkX != newPos.X; 
 			checkX += xOffset, checkY += yOffset)
 		{
-			ChessPiece* piece = &board->GetPiece(checkX, checkY);
-			if (piece != 0)
+			Position pos(checkX, checkY);
+			if (!board->IsSquareFree(pos))
 			{
 				return false;
 			}

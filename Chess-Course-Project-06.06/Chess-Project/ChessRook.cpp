@@ -15,8 +15,8 @@ bool ChessRook::IsMoveLegal(Position currPos, Position newPos, GameBoard* board)
 		int yOffset = (newPos.Y - currPos.Y) > 0 ? 1 : -1;
 		for (int checkY = currPos.Y + yOffset; checkY != newPos.Y; checkY += yOffset)
 		{
-			ChessPiece* piece = &board->GetPiece(currPos.X, checkY);
-			if (piece != 0) {
+			Position pos(currPos.X, checkY);
+			if (!board->IsSquareFree(pos)) {
 				return false;
 			}
 		}
@@ -28,8 +28,8 @@ bool ChessRook::IsMoveLegal(Position currPos, Position newPos, GameBoard* board)
 		int xOffset = (newPos.X - currPos.X) > 0 ? 1 : -1;
 		for (int xCheck = currPos.X + xOffset; xCheck != newPos.X; xCheck += xOffset)
 		{
-			ChessPiece* piece = &board->GetPiece(xCheck, currPos.Y);
-			if (piece != 0) {
+			Position pos(xCheck, currPos.Y);
+			if (!board->IsSquareFree(pos)) {
 				return false;
 			}
 		}
