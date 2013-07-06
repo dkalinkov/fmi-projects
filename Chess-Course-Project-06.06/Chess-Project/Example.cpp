@@ -27,10 +27,19 @@ int main()
 			if (!board.IsSquareFree(currPos))
 			{
 				ChessPiece* piece = &board.GetPiece(currPos.X, currPos.Y);
-				if (piece->IsMoveLegal(currPos, newPos, &board))
+				if (piece->IsMoveLegal(currPos, newPos, &board) && piece->GetColor() == board.GetPlayerOnTurn())
 				{
 					board.SetPiece(piece, newPos.X, newPos.Y);
 					board.SetPiece(0, currPos.X, currPos.Y);
+
+					if (board.GetPlayerOnTurn() == White)
+					{
+						board.SetPlayerOnTurn(Black);
+					}
+					else
+					{
+						board.SetPlayerOnTurn(White);
+					}
 				}
 				else
 				{

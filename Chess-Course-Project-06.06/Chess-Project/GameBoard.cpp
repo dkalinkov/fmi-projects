@@ -14,6 +14,7 @@ using std::endl;
 //CONSTRUCTOR
 GameBoard::GameBoard()
 {
+	this->onTurn = White;
 	for (int row = 0; row < fieldSize; row++)
 	{
 		for (int col = 0; col < fieldSize; col++)
@@ -25,6 +26,7 @@ GameBoard::GameBoard()
 	InitBoard();
 }
 
+//DESTRUCTOR
 GameBoard::~GameBoard()
 {
 	//for (int row = 0; row < fieldSize; row++)
@@ -32,7 +34,6 @@ GameBoard::~GameBoard()
 	//	for (int col = 0; col < fieldSize; col++)
 	//	{
 	//		delete board[row][col];
-	//		board[row][col] = 0;
 	//	}
 	//}
 }
@@ -140,4 +141,15 @@ void GameBoard::SetPiece(ChessPiece* piece, int posX, int posY)
 ChessPiece& GameBoard::GetPiece(int posX, int posY) const
 {
 	return board[posX][posY]->GetPiece();
+}
+
+//PLAYER ON TRUN GETTER AND SETTER
+PieceColor GameBoard::GetPlayerOnTurn() const
+{
+	return this->onTurn;
+}
+
+void GameBoard::SetPlayerOnTurn(PieceColor color)
+{
+	this->onTurn = color;
 }
