@@ -1,3 +1,7 @@
+% The problem asks to find all integer points that
+% are inside a circle (around (0,0)) or that are on
+% the circle's borders
+
 % Generates all numbers between A and B
 gen(A, _, A). 
 gen(A, B, X):- 
