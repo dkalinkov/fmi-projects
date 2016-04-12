@@ -2,7 +2,7 @@
 % Example:  apnd([1, 2, 3], [4, 5], X).
 % Output:   X = [1, 2, 3, 4, 5].
 apnd([], X, X).
-apnd([H|A], X, [H|Y]) :- apnd(A,X,Y).
+apnd([H|A], X, [H|Y]) :- apnd(A, X, Y).
 
 % Reversing a list
 % Example:  rev([1, 2, 3], X).
@@ -15,16 +15,9 @@ rev([], X, X).
 % Example:  transpose([[1, 2, 3], [4, 5, 6]], X).
 % Output:   X = [[1, 4], [2, 5], [3, 6]].
 transpose([[]|_], []).
-transpose(M, [X|T]) :- 
-    row(M, X, M1), 
+transpose(M, [H|T]) :- 
+    row(M, H, M1), 
     transpose(M1, T).
 
 row([], [], []).
-row([[X|Xs]|Ys], [X|R], [Xs|Z]) :- row(Ys, R, Z).
-
-% Checks if X is a member of the list
-% Example:  isMember(1, [1,2,3,4,5]).
-% Output:   true ; ...
-isMember(X, [Y|T]) :- 
-    X = Y; 
-    isMember(Y, T).
+row([[Hm|Tm]|Rm], [Hm|Rt], [Tm|Z]) :- row(Rm, Rt, Z).
