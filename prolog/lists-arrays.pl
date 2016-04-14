@@ -21,3 +21,21 @@ transpose(M, [H|T]) :-
 
 row([], [], []).
 row([[Hm|Tm]|Rm], [Hm|Rt], [Tm|Z]) :- row(Rm, Rt, Z).
+
+% Finds the minimal value in a list
+% Example:  minEl([1,2,3], X).
+% Output:   X = 1.
+minVal([L], L) :- !.
+minVal([X,Y|T], O) :-
+    (X > Y ->
+        minVal([Y|T], O);
+        minVal([X|T], O)).
+
+% Finds the maximum value in a list
+% Example:  minEl([1,2,3], X).
+% Output:   X = 1.
+maxVal([L], L) :- !.
+maxVal([X,Y|T], O) :-
+    (X < Y ->
+        maxVal([Y|T], O);
+        maxVal([X|T], O)).
